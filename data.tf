@@ -1,20 +1,36 @@
-data "aws_vpc" "selected" {
-  id = "vpc-09032bd3b68b93e6d" 
-    
-  }
+# locals{
+#   vpc_name = "ec2cluster_django_vpc"
+#   subnet_name = "ec2cluster_django_subnet"
+#   security_group_name = "ec2cluster_django_sg"
+# }
 
 
-data "aws_subnet" "selected" {
-  vpc_id = data.aws_vpc.selected.id
-  id = "subnet-01c62371f47d21690" 
-    
-  }
+# data "aws_vpc" "selected" {
+#   filter {
+#     name = "tag:Name"
+#     values = [local.vpc_name]
+
+#   }
+#   }
 
 
-data "aws_security_group" "selected" {
-  vpc_id = data.aws_vpc.selected.id
-  id = "sg-01dcadfa5df503d72" 
-  }
+# data "aws_subnet" "selected" {
+#   filter {
+#     name = "tag:Name"
+#     values = [local.subnet_name]
+
+#   }
+
+#   }
+
+
+# data "aws_security_group" "selected" {
+#   filter {
+#     name = "tag:Name"
+#     values = [local.security_group_name]
+
+#   }
+#   }
 
 ###################################################
 
