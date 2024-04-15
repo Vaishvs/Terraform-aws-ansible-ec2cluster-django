@@ -14,3 +14,8 @@ resource "aws_internet_gateway" "gwcluster" {
   }
 }
 
+
+resource "aws_internet_gateway_attachment" "gwattachment" {
+  internet_gateway_id = aws_internet_gateway.gwcluster.id
+  vpc_id              = aws_vpc.clustervpc.id
+}
