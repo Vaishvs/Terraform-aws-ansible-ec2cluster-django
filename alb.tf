@@ -17,7 +17,7 @@ resource "aws_lb" "test_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.clustersg.id]
-  subnets           = [aws_subnet.cluster_subnet_a.id, aws_subnet.cluster_subnet_b.id,aws_subnet.cluster_subnet_c.id]#[for subnet in aws_subnet.cluster_subnet : subnet.id]
+  subnets            = aws_subnet.cluster_subnet.*.id                   #[for subnet in aws_subnet.cluster_subnet : subnet.id]
 
   enable_deletion_protection = true
 
